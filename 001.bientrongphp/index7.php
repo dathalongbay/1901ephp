@@ -23,6 +23,9 @@ var_dump($var_false);
 $var_str = "ha noi";
 echo '<br>';
 var_dump($var_str);
+$abc = null;
+echo '<br>';
+var_dump($abc);
 ?>
 </body>
 </html>
