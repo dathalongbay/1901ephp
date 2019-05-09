@@ -16,6 +16,7 @@ Nếu echo 1 số thì không cần để trong "" hoặc ''
 
 <?php
 echo "index.php";
+echo "<br>";
 echo 5;
 echo "<p>PHP in ra thẻ html</p>";
 ?>
