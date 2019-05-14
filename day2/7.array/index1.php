@@ -38,6 +38,7 @@ echo "<br>" . $mang[2];
 echo "<pre>";
 print_r($mang);
 echo "</pre>";
+
 ?>
 
 
