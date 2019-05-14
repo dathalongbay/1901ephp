@@ -22,6 +22,22 @@ $mang = array("nguyen van a", "nguyen van b", "nguyen van c");
 echo "<br>" . $mang[0];
 echo "<br>" . $mang[1];
 echo "<br>" . $mang[2];
+echo "<pre>";
+print_r($mang);
+echo "</pre>";
+// thay đổi giá trị của các phần tử trong mảng thông qua key của nó
+$mang[0] = "123";
+$mang[1] = "456";
+$mang[2] = "789";
+
+echo "<br>" . $mang[0];
+echo "<br>" . $mang[1];
+echo "<br>" . $mang[2];
+
+// Lệnh in ra cấu trúc của mảng trong php
+echo "<pre>";
+print_r($mang);
+echo "</pre>";
 ?>
 
 
