@@ -5,11 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Foreach mảng chỉ số ( mảng có key là số ) </h1>
-<h1>toán tử ! là toán tử phủ định</h1>
+<h1>Foreach mảng kết hợp ( có key chắc chắn chứa chữ ) </h1>
+
 <?php
-// Mảng chỉ số
-$students = array("nguyen van a1","nguyen van a2","nguyen van a3","nguyen van a4","nguyen van a5",);
+// Mảng kết hợp
+$students = array("a" => "nguyen van a1","b" => "nguyen van a2","c" => "nguyen van a3",
+    "d" => "nguyen van a4","e" => "nguyen van a5",);
 echo "<pre>";
 print_r($students);
 echo "</pre>";
