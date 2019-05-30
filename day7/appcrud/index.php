@@ -34,25 +34,7 @@ $result = mysqli_query($connection, $sqlSelect);
         )
  */
 
-/**
- * mysqli_num_rows() truyền vào tham số của hàm mysqli_query()
- * được sử dụng để đếm số bản ghi trả về của câu SQL
- */
-if (mysqli_num_rows($result) > 0) {
-    /**
-     * mysqli_fetch_assoc() truyền vào biến của mysqli_query()
-     * nó dùng để lấy ra từng bản ghi trả về của câu SQL
-     * $row sẽ là 1 bản ghi trong bảng
-     * vòng lặp while sẽ chạy cho đến khi hết các bản ghi trong bảng trả về từ câu SQL
-     */
-    while($row = mysqli_fetch_assoc($result)) {
-        echo "<pre>";
-        print_r($row);
-        echo "</pre>";
-    }
-} else {
-    echo "<br> Không có bản ghi nào trong CSDL";
-}
+
 
 ?>
 
@@ -69,24 +51,35 @@ if (mysqli_num_rows($result) > 0) {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+
+                <?php
+                /**
+                 * mysqli_num_rows() truyền vào tham số của hàm mysqli_query()
+                 * được sử dụng để đếm số bản ghi trả về của câu SQL
+                 */
+                if (mysqli_num_rows($result) > 0) {
+                    /**
+                     * mysqli_fetch_assoc() truyền vào biến của mysqli_query()
+                     * nó dùng để lấy ra từng bản ghi trả về của câu SQL
+                     * $row sẽ là 1 bản ghi trong bảng
+                     * vòng lặp while sẽ chạy cho đến khi hết các bản ghi trong bảng trả về từ câu SQL
+                     */
+                    while($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                        <tr>
+                            <th scope="row"><?php echo $row['id'] ?></th>
+                            <td><?php echo $row['name'] ?></td>
+                            <td><?php echo $row['address'] ?></td>
+                            <td><?php echo $row['salary'] ?></td>
+                        </tr>
+                        <?php
+                    }
+                } else {
+                    echo "<br> Không có bản ghi nào trong CSDL";
+                }
+                ?>
+
+
                 </tbody>
             </table>
         </div>
