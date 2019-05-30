@@ -10,6 +10,36 @@
 <body>
 
 <?php
+/*
+ * Nạp kết nối CSDL vào file này
+ */
+include_once "config.php";
+
+if (isset($_POST['name']) && isset($_POST['address']) && isset($_POST['salary'])) {
+
+    if ($_POST['name'] && $_POST['address'] && ($_POST['salary'] > 0)) {
+        $name = $_POST['name'];
+        $address = $_POST['address'];
+        $salary = $_POST['salary'];
+
+        $sqlInsert = "INSERT INTO employees (name, address, salary) VALUES ('$name', '$address', $salary)";
+
+        if (mysqli_query($connection, $sqlInsert)) {
+            echo "Insert thành công";
+            /**
+             * hàm header được dùng để chuyển hương url
+             */
+            header('Location: index.php');
+            exit;
+        } else {
+            echo "Insert thất bại";
+        }
+
+    }
+
+}
+
+
 echo "<pre>";
 print_r($_POST);
 echo "</pre>";
