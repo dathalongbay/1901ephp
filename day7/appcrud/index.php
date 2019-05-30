@@ -41,6 +41,11 @@ $result = mysqli_query($connection, $sqlSelect);
 <div class="container" style="margin-top: 100px">
     <div class="row">
         <div class="col-md-12">
+
+            <div style="margin: 30px 0">
+                <a href="create.php" class="btn btn-success">thêm mới nhân viên</a>
+            </div>
+
             <table class="table">
                 <thead>
                 <tr>
@@ -48,6 +53,7 @@ $result = mysqli_query($connection, $sqlSelect);
                     <th scope="col">Tên</th>
                     <th scope="col">Địa chỉ</th>
                     <th scope="col">Lương</th>
+                    <th scope="col">Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -71,6 +77,14 @@ $result = mysqli_query($connection, $sqlSelect);
                             <td><?php echo $row['name'] ?></td>
                             <td><?php echo $row['address'] ?></td>
                             <td><?php echo $row['salary'] ?></td>
+                            <td>
+                                <div>
+                                    <a class="btn btn-warning" href="edit.php?id=<?php echo $row['id'] ?>">Sửa nhân viên</a>
+                                </div>
+                                <div>
+                                    <a class="btn btn-danger" href="delete.php?id=<?php echo $row['id'] ?>">Xoá nhân viên</a>
+                                </div>
+                            </td>
                         </tr>
                         <?php
                     }
