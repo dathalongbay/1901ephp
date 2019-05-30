@@ -43,7 +43,8 @@ if (isset($_GET['id'])) {
             <h1>Sửa nhân viên </h1>
 
             <div>
-                <form name="create" action="" method="post">
+                <form name="edit" action="update.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo (int) $_GET['id'] ?>">
                     <div class="form-group">
                         <label>Tên</label>
                         <input type="text" class="form-control" name="name" value="<?php echo $name ?>">
