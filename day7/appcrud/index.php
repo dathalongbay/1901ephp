@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<?php
+/**
+ * Nạp kết nối CSDL
+ */
+include_once "config.php";
+?>
+
 <div class="container" style="margin-top: 100px">
     <div class="row">
         <div class="col-md-12">
