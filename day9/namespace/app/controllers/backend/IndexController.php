@@ -1,8 +1,13 @@
 <?php
 namespace App\Controllers\Backend;
 
-use App\Controllers\Frontend;
-use App\Models;
+/**
+ * cú pháp as để tạo bí danh
+ * Khi import namespace thì phải import đến tận cấp tên class
+ */
+use App\Controllers\Frontend\IndexController as FIC;
+use App\Models\CommonModel;
+use Duc\Console\Http;
 
 class IndexController {
 
@@ -15,12 +20,14 @@ class IndexController {
 
     public function useOtherNamespace() {
 
-        $controlerFe = new Frontend\IndexController();
+        $controlerFe = new FIC();
 
         $controlerFe->indexAction();
 
-        $model = new Models\CommonModel();
+        $model = new CommonModel();
         $model->indexAction();
 
+        $test = new Http();
+        $test->indexAction();
     }
 }

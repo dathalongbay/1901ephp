@@ -60,6 +60,7 @@ class User extends Authenticatable
 include_once "app/controllers/backend/IndexController.php";
 include_once "app/controllers/frontend/IndexController.php";
 include_once "app/models/CommonModel.php";
+include_once "vendor/duc/src/Console/Http.php";
 
 // Không import Namespace thì khi khởi tạo class
 // Phải sử dụng đầy đủ namespace
