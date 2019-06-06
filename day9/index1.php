@@ -55,8 +55,40 @@
     showMessage(function (){
         return "lambda truyền ở dạng callback";
     });
-
-
     ?>
+
+    <h1>Closurem là lambda nhưng mà sẽ sử dụng các biến toàn cục khi khai báo closure</h1>
+
+    <?php
+    // 2 biến global
+    $city = "hà nội";
+    $country = "Việt nam";
+
+    $go = function ($vehicle) use ($city , $country){
+        echo "<br> Go to travel city " . $city . " country " . $country . " by " . $vehicle;
+    };
+
+    $go("motor");
+
+    /**
+     * Ví dụ tương tự closure
+     */
+
+    $go1 = function ($vehicle, $city, $country){
+        echo "<br> Go to travel city " . $city . " country " . $country . " by " . $vehicle;
+    };
+
+    // gọi hàm
+    $go1("motor", $city, $country);
+
+    /**
+     * Closure sử dụng biến global khi mà khai báo closure
+     * Còn thằng truyền tham số sẽ truyền vào khi gọi hàm
+     * khi mà tách quá trình khai báo clousure
+     * và sử dụng closure ra 2 file khác nhau
+     */
+    ?>
+
+
 </body>
 </html>
